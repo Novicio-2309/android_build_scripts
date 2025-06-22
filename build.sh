@@ -3,50 +3,47 @@
 set -e
 
 # Initialize repo with specified manifest
-repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs --depth=1
+repo init -u https://github.com/PixelOS-AOSP/manifest
 
 # Run inside foss.crave.io devspace, in the project folder
 # Remove existing local_manifests
-crave run --no-patch -- "rm -rf .repo/local_manifests && \
+crave run --no-patch -- "
+rm -rf .repo/local_manifests &&
 # Initialize repo with specified manifest
-repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 14 --depth=1 ;\
+repo init -u https://github.com/ProjectPixelage/android_manifest.git -b 15 --git-lfs
 
 # Clone local_manifests repository
-git clone https://github.com/mdalam073/local_manifest --depth 1 -b Derp-14-tissot .repo/local_manifest ;\
+git clone https://github.com/Novicio-2309/local_manifests.git -b pixelage-bp1a-pova4series .repo/local_manifests &&
 
 # Sync the repositories
-/opt/crave/resync.sh && \ 
+/opt/crave/resync.sh &&t
 
 
 # Set up build environment
-source build/envsetup.sh && \
+PIXELAGE_BUILD=LG7n &&
+source build/envsetup.sh &&
 
 # Lunch configuration
-lunch derp_tissot-ap1a-userdebug ;\
+lunch pixelage_LG7n-bp1a-userdebug &&
 
-croot ;\
-mka derp ; \
-# echo "Date and time:" ; \
+# remove key folder
+rm -rf vendor/voltage-priv/keys &&
 
-# Print out/build_date.txt
-# cat out/build_date.txt; \
-
-# Print SHA256
-# sha256sum out/target/product/*/*.zip"
-
-# Clean up
-# rm -rf tissot/*
-
-
+# Build
+croot &&
+mka bacon
+"
 
 # Pull generated zip files
-# crave pull out/target/product/*/*.zip
+crave pull out/target/product/*/*.zip
 
 # Pull generated img files
-# crave pull out/target/product/*/*.img
+crave pull out/target/product/*/*.img
 
 # Upload zips to Telegram
-# telegram-upload --to sdreleases tissot/*.zip
-
-#Upload to Github Releases
-#curl -sf https://raw.githubusercontent.com/mdalam073/Releases/main/headless.sh | sh
+# telegram-upload --to sdreleases out/target/product/*/*.zip
+    
+# Upload to Github Releases
+# curl -sf https://raw.githubusercontent.com/Meghthedev/Releases/main/headless.sh | sh
+# Clean up build artifacts (if needed)
+# rm -rf out/target/product/*
