@@ -13,7 +13,7 @@ repo init -u https://github.com/ProjectPixelage/android_manifest.git -b 15 --git
 git clone https://github.com/Novicio-2309/local_manifests.git -b pixelage-bp1a-pova4series .repo/local_manifests &&
 
 # Sync the repositories
-/opt/crave/resync.sh &&t
+/opt/crave/resync.sh &&
 
 
 # Set up build environment
