@@ -2,9 +2,6 @@
 
 set -e
 
-# Initialize repo with specified manifest
-repo init -u https://github.com/PixelOS-AOSP/manifest
-
 # Run inside foss.crave.io devspace, in the project folder
 # Remove existing local_manifests
 crave run --no-patch -- "
