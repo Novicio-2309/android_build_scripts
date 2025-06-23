@@ -12,6 +12,9 @@ repo init -u https://github.com/ProjectPixelage/android_manifest.git -b 15 --git
 # Clone local_manifests repository
 git clone https://github.com/Novicio-2309/local_manifests.git -b pixelage-bp1a-pova4series .repo/local_manifests &&
 
+# remove key folder
+rm -rf vendor/lineage-priv/keys &&
+
 # Sync the repositories
 /opt/crave/resync.sh &&
 
@@ -22,9 +25,6 @@ source build/envsetup.sh &&
 
 # Lunch configuration
 lunch pixelage_LG7n-bp1a-userdebug &&
-
-# remove key folder
-rm -rf vendor/voltage-priv/keys &&
 
 # Build
 croot &&
