@@ -2,45 +2,29 @@
 
 set -e
 
-# Run inside foss.crave.io devspace, in the project folder
-# Remove existing local_manifests
 crave run --no-patch -- "
-rm -rf .repo/local_manifests &&
-# Initialize repo with specified manifest
-repo init -u https://github.com/ProjectPixelage/android_manifest.git -b 15 --git-lfs
+  rm -rf .repo/local_manifests &&
 
-# Clone local_manifests repository
-git clone https://github.com/Novicio-2309/local_manifests.git -b pixelage-bp1a-pova4series .repo/local_manifests &&
+  repo init -u https://github.com/ProjectPixelage/android_manifest.git -b 15 --git-lfs &&
 
-# remove key folder
-rm -rf vendor/lineage-priv/keys &&
+  git clone https://github.com/Novicio-2309/local_manifests.git -b pixelage-bp1a-pova4series .repo/local_manifests &&
 
-# Sync the repositories
-/opt/crave/resync.sh &&
+  rm -rf vendor/lineage-priv/keys &&
 
+  /opt/crave/resync.sh &&
 
-# Set up build environment
-PIXELAGE_BUILD=LG7n &&
-source build/envsetup.sh &&
+  PIXELAGE_BUILD=LG7n &&
+  source build/envsetup.sh &&
 
-# Lunch configuration
-lunch pixelage_LG7n-bp1a-userdebug &&
+  lunch pixelage_LG7n-bp1a-userdebug &&
 
-# Build
-croot &&
-mka bacon
+  mka target-files-package otatools &&
+
+  /opt/crave/crave_sign.sh &&
+
+  mka bacon
 "
 
-# Pull generated zip files
+# Pull ROM ZIP and images
 crave pull out/target/product/*/*.zip
-
-# Pull generated img files
 crave pull out/target/product/*/*.img
-
-# Upload zips to Telegram
-# telegram-upload --to sdreleases out/target/product/*/*.zip
-    
-# Upload to Github Releases
-# curl -sf https://raw.githubusercontent.com/Meghthedev/Releases/main/headless.sh | sh
-# Clean up build artifacts (if needed)
-# rm -rf out/target/product/*
