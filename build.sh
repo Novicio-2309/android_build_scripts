@@ -5,9 +5,9 @@ set -e
 crave run --no-patch -- "
   rm -rf .repo/local_manifests &&
 
-  repo init -u https://github.com/ProjectPixelage/android_manifest.git -b 15 --git-lfs &&
+  repo init -u https://github.com/Project-Mist-OS/manifest -b vic --git-lfs &&
 
-  git clone https://github.com/Novicio-2309/local_manifests.git -b pixelage-bp1a-pova4series .repo/local_manifests &&
+  git clone https://github.com/Novicio-2309/local_manifests.git .repo/local_manifests &&
 
   rm -rf vendor/lineage-priv/keys &&
 
@@ -16,13 +16,13 @@ crave run --no-patch -- "
   PIXELAGE_BUILD=LG7n &&
   source build/envsetup.sh &&
 
-  lunch pixelage_LG7n-bp1a-userdebug &&
+  mistify LG7n userdebug &&
 
   mka target-files-package otatools &&
 
   /opt/crave/crave_sign.sh &&
 
-  mka bacon
+  mist b 
 "
 
 # Pull ROM ZIP and images
