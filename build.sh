@@ -30,7 +30,3 @@ lunch infinity_LG7n-userdebug &&
 # Start the build
 mka bacon
 "
-
-# Pull output files
-crave pull out/target/product/*/*.zip
-crave pull out/target/product/*/*.img
