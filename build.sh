@@ -7,7 +7,7 @@ crave run --no-patch -- "
 # Remove existing local_manifests
 rm -rf .repo/local_manifests &&
 rm -rf build/soong &&
-rm -rf vendor/lineage-priv/keys
+rm -rf vendor/lineage-priv/keys &&
 
 # Initialize repo with specified manifest
 repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 15 -g default,-mips,-darwin,-notdefault &&
