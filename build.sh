@@ -8,25 +8,22 @@ crave run --no-patch -- "
 rm -rf .repo/local_manifests &&
 
 # Initialize repo with specified manifest
-repo init -u https://github.com/ProjectPixelage/android_manifest.git -b 15 --git-lfs &&
+repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 15 -g default,-mips,-darwin,-notdefault &&
 
 # Clone your local_manifests
-git clone https://github.com/Novicio-2309/local_manifests.git -b pixelage-bp1a-pova4series .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b infinityX-15-bp1a .repo/local_manifests &&
 
-# Remove test keys (optional if you want to avoid testkey conflicts)
-rm -rf vendor/lineage-priv/keys &&
-
-# Download and extract your signing keys from PixelDrain
-curl -L -o signing-keys.tar.gz https://pixeldrain.com/api/file/VBFj5hBW &&
-tar -xvzf signing-keys.tar.gz &&
+#Signingkey for infinity
+git clone https://github.com/ProjectInfinity-X/vendor_infinity-priv_keys-template vendor/infinity-priv/keys &&
+cd vendor/infinity-priv/keys &&
+./keys.sh &&
 
 # Start repo sync
 /opt/crave/resync.sh &&
 
 # Set up environment
-PIXELAGE_BUILD=LG7n &&
-source build/envsetup.sh &&
-lunch pixelage_LG7n-bp1a-userdebug &&
+. build/envsetup.sh &&
+lunch infinity_LG7n-userdebug &&
 
 # Start the build
 mka bacon
