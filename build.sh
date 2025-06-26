@@ -34,6 +34,19 @@ crave run --no-patch -- "
   # Step 7: Sync the full source
   /opt/crave/resync.sh &&
 
+  # ✅ Step 7.1: Remove Chrome from vendor/google and vendor/gms
+  echo '🧹 Removing Chrome references...' &&
+  for dir in vendor/google vendor/gms; do
+    if [ -d \"\$dir\" ]; then
+      echo \"➡️ Checking \$dir...\"
+      grep -Ril 'chrome' \"\$dir\" | while read f; do
+        sed -i '/[Cc]hrome/d' \"\$f\"
+      done
+      find \"\$dir\" -type f -iname '*chrome*.apk' -exec rm -f {} \;
+    fi
+  done &&
+  echo '✅ Chrome cleanup finished.' &&
+
   # Step 8: Replace default build/soong with patched version
   echo '🔧 Replacing build/soong with patched version from your GitHub fork...'
   rm -rf build/soong &&
