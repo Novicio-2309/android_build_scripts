@@ -25,14 +25,20 @@ crave run --no-patch -- "
     rm -f signing-keys.tar.gz
   fi &&
 
-  # Step 6: Sync the full source
+  # Step 6: Overwrite keys.mk if it exists
+  if [ -f vendor/mist/signing/keys/keys.mk ]; then
+    echo '📄 Overwriting keys.mk to set releasekey...'
+    echo \"PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/mist/signing/keys/releasekey\" > vendor/mist/signing/keys/keys.mk
+  fi &&
+
+  # Step 7: Sync the full source
   /opt/crave/resync.sh &&
 
-  # Step 7: Set up build environment
+  # Step 8: Set up build environment
   source build/envsetup.sh &&
   mistify LG7n userdebug &&
   mka target-files-package otatools &&
 
-  # Step 8: Start the build
+  # Step 9: Start the build
   mist b
 "
