@@ -11,7 +11,7 @@ crave run --no-patch -- "
   repo init -u https://github.com/Project-Mist-OS/manifest -b vic --git-lfs &&
 
   # Step 3: Clone your local_manifests
-  git clone https://github.com/Novicio-2309/local_manifests.git .repo/local_manifests &&
+  git clone https://github.com/Novicio-2309/local_manifests.git -b mistOS-15-bp1a .repo/local_manifests &&
 
   # Step 4: Recreate signing key folder
   mkdir -p vendor/mist/signing/keys &&
