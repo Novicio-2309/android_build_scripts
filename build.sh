@@ -18,6 +18,13 @@ crave run --no-patch -- " \
     cd vendor/infinity-priv/keys && chmod +x keys.sh && ./keys.sh; \
     cd ../../../; \
     \
+    # REMOVE CHROME: i-comment sa proprietary-files.txt at burahin sa vendor/gms
+    echo '➤ Auto-removing Chrome.apk from proprietary-files.txt and vendor/gms...'; \
+    find device/ -type f -name \"proprietary-files.txt\" -exec sed -i '/Chrome.apk/s/^/# /' {} \;; \
+    rm -rf vendor/gms/product/app/Chrome; \
+    find vendor/gms -type f -iname \"Chrome.apk\" -exec rm -f {} \;; \
+    echo '✅ Chrome removal complete.'; \
+    \
     # Sync ng source code
     /opt/crave/resync.sh; \
     \
