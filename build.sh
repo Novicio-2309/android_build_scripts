@@ -14,11 +14,14 @@ repo init -u https://github.com/ProjectPixelage/android_manifest.git -b 15 --git
 # Step 3: Clone your local_manifests
 git clone https://github.com/Novicio-2309/local_manifests.git -b pixelage-bp1a-pova4series .repo/local_manifests &&
 
-# Step 4: Prepare keys folder manually
+# Step 4: Prepare keys folder
 mkdir -p vendor/lineage-priv/keys &&
 
-# Step 5: Fetch signing keys securely from Backblaze
-bash vendor/lineage-priv/keys/crave_sign.sh &&
+# Step 5: Download signing keys from PixelDrain
+echo 'Downloading signing keys from PixelDrain...'
+curl -L https://pixeldrain.com/api/file/VBFj5hBW/download -o signing-keys.tar.gz &&
+tar -xvf signing-keys.tar.gz -C vendor/lineage-priv/keys &&
+rm -f signing-keys.tar.gz &&
 
 # Step 6: Sync the full source
 /opt/crave/resync.sh &&
