@@ -34,11 +34,16 @@ crave run --no-patch -- "
   # Step 7: Sync the full source
   /opt/crave/resync.sh &&
 
-  # Step 8: Set up build environment
+  # Step 8: Replace default build/soong with patched version
+  echo '🔧 Replacing build/soong with patched version from your GitHub fork...'
+  rm -rf build/soong &&
+  git clone https://github.com/Novicio-2309/android_build_soong.git -b patched-15 build/soong &&
+
+  # Step 9: Set up build environment
   source build/envsetup.sh &&
   mistify LG7n userdebug &&
   mka target-files-package otatools &&
 
-  # Step 9: Start the build
+  # Step 10: Start the build
   mist b
 "
