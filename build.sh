@@ -54,7 +54,7 @@ crave run --no-patch -- "
 
   # Step 9: Set up build environment and lunch target
   source build/envsetup.sh &&
-  lunch mist_LG7n-userdebug &&
+  lunch lineage_LG7n-userdebug &&
 
   # Step 10: Start the build
   mka bacon
