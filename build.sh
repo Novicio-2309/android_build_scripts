@@ -39,11 +39,10 @@ crave run --no-patch -- "
   rm -rf build/soong &&
   git clone https://github.com/Novicio-2309/android_build_soong.git -b patched-15 build/soong &&
 
-  # Step 9: Set up build environment
+  # Step 9: Set up build environment and lunch target
   source build/envsetup.sh &&
-  mistify LG7n userdebug &&
-  mka target-files-package otatools &&
+  lunch mist_LG7n-userdebug &&
 
   # Step 10: Start the build
-  mist b
+  mka bacon
 "
