@@ -2,6 +2,12 @@
 
 set -e
 
+# ✅ Check kung may crave_sign.sh sa kasalukuyang folder
+if [ ! -f crave_sign.sh ]; then
+  echo "❌ Missing crave_sign.sh in root directory!"
+  exit 1
+fi
+
 crave run --no-patch -- "
   # 🔹 Step 1: Clean old manifests and keys
   rm -rf .repo/local_manifests &&
