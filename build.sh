@@ -59,8 +59,8 @@ crave run --no-patch -- "
   git clone https://github.com/Novicio-2309/android_build_soong.git -b patched-15 build/soong &&
 
   # 🔹 Step 9: Set up build environment and target
-  mistify LG7n userdebug &&
+  lunch lineage_LG7n userdebug &&
 
   # 🔹 Step 10: Build the ROM
-  mist b
+  mka bacon
 "
