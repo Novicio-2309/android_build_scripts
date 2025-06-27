@@ -25,17 +25,10 @@ crave run --no-patch -- "
   chmod +x vendor/mist/signing/keys/crave_sign.sh &&
 
   # 🔹 Step 5: Run crave_sign.sh to download and extract signing keys
-  bash vendor/mist/signing/keys/crave_sign.sh || (
-    echo '⚠️ Backblaze failed. Falling back to PixelDrain...' &&
-    curl -L https://pixeldrain.com/api/file/VBFj5hBW/download -o signing-keys.tar.gz &&
-    mkdir -p vendor/mist/signing/temp_keys &&
-    tar -xvf signing-keys.tar.gz -C vendor/mist/signing/temp_keys &&
-    rm -f signing-keys.tar.gz &&
-    SUBDIR=\$(find vendor/mist/signing/temp_keys -mindepth 1 -maxdepth 1 -type d | head -n 1) &&
-    cp -r \$SUBDIR/* vendor/mist/signing/keys/ &&
-    rm -rf vendor/mist/signing/temp_keys &&
-    echo 'PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/mist/signing/keys/releasekey' > vendor/mist/signing/keys/keys.mk
-  ) &&
+  bash vendor/mist/signing/keys/crave_sign.sh &&
+
+  # 🔹 Step 5.1: Overwrite keys.mk to use releasekey
+  echo 'PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/mist/signing/keys/releasekey' > vendor/mist/signing/keys/keys.mk &&
 
   # 🔹 Step 6: Sync the full source
   /opt/crave/resync.sh &&
@@ -59,7 +52,7 @@ crave run --no-patch -- "
   git clone https://github.com/Novicio-2309/android_build_soong.git -b patched-15 build/soong &&
 
   # 🔹 Step 9: Set up build environment and target
-  lunch lineage_LG7n userdebug &&
+  lunch lineage_LG7n-userdebug &&
 
   # 🔹 Step 10: Build the ROM
   mka bacon
