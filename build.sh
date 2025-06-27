@@ -11,7 +11,7 @@ fi
 crave run --no-patch -- "
   # 🔹 Step 1: Clean old manifests and keys
   rm -rf .repo/local_manifests &&
-  rm -rf vendor/mist/signing/keys &&
+  rm -rf vendor/lineage-priv/keys &&
 
   # 🔹 Step 2: Initialize repo
   repo init -u https://github.com/Project-Mist-OS/manifest -b vic --git-lfs &&
@@ -20,15 +20,12 @@ crave run --no-patch -- "
   git clone https://github.com/Novicio-2309/local_manifests.git -b mistOS-15-bp1a .repo/local_manifests &&
 
   # 🔹 Step 4: Create keys directory and copy crave_sign.sh
-  mkdir -p vendor/mist/signing/keys &&
-  cp crave_sign.sh vendor/mist/signing/keys/ &&
-  chmod +x vendor/mist/signing/keys/crave_sign.sh &&
+  mkdir -p vendor/lineage-priv/keys &&
+  cp crave_sign.sh vendor/lineage-priv/keys/ &&
+  chmod +x vendor/lineage-priv/keys/crave_sign.sh &&
 
   # 🔹 Step 5: Run crave_sign.sh to download and extract signing keys
-  bash vendor/mist/signing/keys/crave_sign.sh &&
-
-  # 🔹 Step 5.1: Overwrite keys.mk to use releasekey
-  echo 'PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/mist/signing/keys/releasekey' > vendor/mist/signing/keys/keys.mk &&
+  bash vendor/lineage-priv/keys/crave_sign.sh &&
 
   # 🔹 Step 6: Sync the full source
   /opt/crave/resync.sh &&
