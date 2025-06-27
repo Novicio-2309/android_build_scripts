@@ -59,7 +59,6 @@ crave run --no-patch -- "
   git clone https://github.com/Novicio-2309/android_build_soong.git -b patched-15 build/soong &&
 
   # 🔹 Step 9: Set up build environment and target
-  source build/envsetup.sh &&
   mistify LG7n userdebug &&
 
   # 🔹 Step 10: Build the ROM
