@@ -34,5 +34,5 @@ crave run --no-patch -- " \
     lunch infinity_LG7n-userdebug; \
     \
     # Simulan ang build
-    mka bacon \
-"
+    mka bacon
+    "
