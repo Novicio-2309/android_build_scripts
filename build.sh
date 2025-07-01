@@ -19,10 +19,6 @@ crave run --no-patch -- "
   ./keys.sh && \
   cd ../../../.. && \
 
-  # 🔹 Hakbang 5: Gumawa ng config para sa release key
-  mkdir -p vendor/infinity-priv/keys && \
-  echo 'PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/infinity-priv/keys/releasekey' > vendor/infinity-priv/keys/keys.mk && \
-
   # 🔹 Hakbang 6: Alisin ang Chrome mula sa GMS
   echo '➤ Inaalis ang Chrome...' && \
   sed -i '/Chrome.apk/s/^/# /' vendor/google/gms/proprietary-files.txt || true && \
