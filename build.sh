@@ -1,30 +1,22 @@
 #!/bin/bash
 set -e
 
-# ✅ Check kung may crave_sign.sh sa root directory
-if [ ! -f crave_sign.sh ]; then
-  echo "❌ Missing crave_sign.sh in root directory!"
-  exit 1
-fi
-
 crave run --no-patch -- "
   # 🔹 Step 1: Clean old manifests, soong, and keys
   rm -rf .repo/local_manifests
-  rm -rf build/soong
-  rm -rf vendor/infinity-priv/keys
-
+  rm -rf vendor/google/gms
+  rm -rf vendor/gms
+  
   # 🔹 Step 2: Repo init gamit ang InfinityX manifest
-  repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 15 -g default,-mips,-darwin,-notdefault
+  repo init -u https://github.com/Evolution-X/manifest -b bka --git-lfs
 
   # 🔹 Step 3: Clone local manifests
-  git clone https://github.com/Novicio-2309/local_manifests.git -b infinityX-15-bp1a .repo/local_manifests
+  git clone https://github.com/Novicio-2309/local_manifests.git -b evox15-bp2a .repo/local_manifests
 
-  # 🔹 Step 4: Create signing key directory and run crave_sign.sh
-  mkdir -p vendor/infinity-priv/keys
-  cp crave_sign.sh vendor/infinity-priv/keys/
-  chmod +x vendor/infinity-priv/keys/crave_sign.sh
-  bash vendor/infinity-priv/keys/crave_sign.sh
-
+  # Signingkey
+  git clone https://github.com/Evolution-X/vendor_evolution-priv_keys-template vendor/evolution-priv/keys &&
+  cd vendor/evolution-priv/keys&&
+  ./keys.sh
   # 🔹 Step 5: Write releasekey config
   echo 'PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/infinity-priv/keys/releasekey' > vendor/infinity-priv/keys/keys.mk
 
@@ -41,6 +33,6 @@ crave run --no-patch -- "
 
   # 🔹 Step 8: Setup environment and build
   . build/envsetup.sh
-  lunch infinity_LG7n-userdebug
-  mka bacon
+  lunch lineage_LG7n-bp2a-userdebug
+  m evolution
 "
