@@ -25,15 +25,16 @@ crave run --no-patch -- "
   # 🔹 Hakbang 3: I-clone ang local manifests
   git clone https://github.com/Novicio-2309/local_manifests.git -b evox15-bp2a .repo/local_manifests && \
 
-# signingkey Evox default
-git clone https://github.com/Evolution-X/vendor_evolution-priv_keys-template vendor/evolution-priv/keys && \
-cd vendor/evolution-priv/keys && \
-./keys.sh && \
+  # 🔹 Hakbang 4: I-clone ang default Evox signing key
+  git clone https://github.com/Evolution-X/vendor_evolution-priv_keys-template vendor/evolution-priv/keys && \
+  cd vendor/evolution-priv/keys && \
+  ./keys.sh && \
+  cd /crave-devspaces/Rising && \
 
-  # 🔹 Hakbang 7: I-sync ang buong source
+  # 🔹 Hakbang 5: I-sync ang buong source
   /opt/crave/resync.sh && \
 
-  # 🔹 Hakbang 8: I-setup ang environment at simulan ang pag-build
+  # 🔹 Hakbang 6: I-setup ang environment at simulan ang pag-build
   . build/envsetup.sh && \
   lunch lineage_LG7n-bp2a-userdebug && \
   m evolution
