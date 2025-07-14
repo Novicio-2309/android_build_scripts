@@ -12,4 +12,4 @@ or if you have one running,
 ```mkdir rom_name; cd rom_name```
 
 ## Pull and Run this script
-$ curl -sf https://raw.githubusercontent.com/Novicio-2309/android_build_scripts/infinityX-15-bp1a/build.sh | sh
+$ curl -sf https://raw.githubusercontent.com/Novicio-2309/android_build_scripts/infinity-16-bp2a/build.sh | sh
