@@ -2,40 +2,22 @@
 set -e
 
 crave run --no-patch -- "
-  # 🔹 Hakbang 1: Linisin ang mga lumang manifest, soong, at keys
-  rm -rf .repo/local_manifests && \
-  rm -rf device/tecno/LG7n && \
-  rm -rf device/tecno/mt6789-common && \
-  rm -rf device/tecno/LG7n-kernel && \
-  rm -rf vendor/tecno/LG7n && \
-  rm -rf vendor/tecno/mt6789-common && \
-  rm -rf vendor/sony/dolby && \
-  rm -rf packages/apps/ViPER4AndroidFX && \
-  rm -rf hardware/mediatek && \
-  rm -rf hardware/transsion && \
-  rm -rf device/mediatek/sepolicy_vndr && \
-  rm -rf vendor/alpha-priv/keys && \
-  rm -rf build/soong && \
-  rm -rf vendor/google/gms && \
-  rm -rf vendor/gms && \
+#Repo init
+repo init -u https://github.com/Project-Mist-OS/manifest.git -b 16 --git-lfs &&
 
-  # 🔹 Hakbang 2: I-repo init gamit ang InfinityX manifest
-  repo init -u https://github.com/Evolution-X/manifest -b bka --git-lfs && \
+#Clone local manifests
+git clone https://github.com/Novicio-2309/local_manifests.git -b mistOS16-Bp2a .repo/local_manifests && 
 
-  # 🔹 Hakbang 3: I-clone ang local manifests
-  git clone https://github.com/Novicio-2309/local_manifests.git -b evox15-bp2a .repo/local_manifests && \
+#signing keys and run setup
+https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys && 
+./keys.sh && \
+  popd && \
 
-  # 🔹 Hakbang 4: I-clone ang default Evox signing key
-  git clone https://github.com/Evolution-X/vendor_evolution-priv_keys-template vendor/evolution-priv/keys && \
-  cd vendor/evolution-priv/keys && \
-  ./keys.sh && \
-  cd /crave-devspaces/Rising && \
+#Sync the full source
+repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all) &&
 
-  # 🔹 Hakbang 5: I-sync ang buong source
-  /opt/crave/resync.sh && \
-
-  # 🔹 Hakbang 6: I-setup ang environment at simulan ang pag-build
-  . build/envsetup.sh && \
-  lunch lineage_LG7n-bp2a-userdebug && \
-  m evolution
+#Setup environment and start build
+  . build/envsetup.sh &&
+mistify LG7n userdebug &&
+mist b
 "
