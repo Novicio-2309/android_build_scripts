@@ -2,6 +2,22 @@
 set -e
 
 crave run --no-patch -- "
+rm -rf .repo/local_manifests &&
+rm -rf device/tecno/LG7n &&
+rm -rf device/tecno/mt6789-common &&
+rm -rf device/tecno/LG7n-kernel &&
+rm -rf vendor/tecno/LG7n &&
+rm -rf vendor/tecno/mt6789-common &&
+rm -rf vendor/sony/dolby &&
+rm -rf packages/apps/ViPER4AndroidFX &&
+rm -rf hardware/mediatek &&
+rm -rf hardware/transsion &&
+rm -rf device/mediatek/sepolicy_vndr &&
+rm -rf vendor/lineage-priv/keys &&
+rm -rf build/soong &&
+rm -rf vendor/google/gms &&
+rm -rf vendor/gms &&
+
 #Repo init
 repo init -u https://github.com/Project-Mist-OS/manifest.git -b 16 --git-lfs &&
 
