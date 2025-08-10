@@ -17,7 +17,7 @@ popd && \
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all) &&
 
 #Setup environment and start build
-  . build/envsetup.sh &&
+. build/envsetup.sh &&
 mistify LG7n userdebug &&
 mist b
 "
