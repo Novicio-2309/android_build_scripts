@@ -9,7 +9,7 @@ rm -rf device/tecno/LG7n-kernel &&
 rm -rf vendor/tecno/LG7n &&
 rm -rf vendor/tecno/mt6789-common &&
 rm -rf vendor/sony/dolby &&
-rm -rf packages/apps/ViPER4AndroidFX &&
+rm -rf vendor/JamesDSP &&
 rm -rf hardware/mediatek &&
 rm -rf hardware/transsion &&
 rm -rf device/mediatek/sepolicy_vndr &&
