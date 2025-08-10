@@ -10,8 +10,8 @@ git clone https://github.com/Novicio-2309/local_manifests.git -b mistOS16-Bp2a .
 
 #signing keys and run setup
 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys && 
-./keys.sh && \
-popd && \
+./keys.sh &&
+popd &&
 
 #Sync the full source
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all) &&
