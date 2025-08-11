@@ -29,7 +29,6 @@ repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune 
 
 #signing keys and run setup
 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
-popd &&
 
 #Setup environment and start build
 . build/envsetup.sh &&
