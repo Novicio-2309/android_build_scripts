@@ -32,6 +32,6 @@ git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/infinity-p
 
 #Setup environment and start build
 . build/envsetup.sh &&
-mistify LG7n userdebug &&
-mist b
+lunch infinity_LG7n-userdebug &&
+m bacon
 "
