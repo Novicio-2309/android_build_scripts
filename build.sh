@@ -3,7 +3,6 @@ set -e
 
 crave run --no-patch -- "
 rm -rf .repo/local_manifests &&
-rm -rf device/tecno/LG7n &&
 rm -rf device/tecno/mt6789-common &&
 rm -rf device/tecno/LG7n-kernel &&
 rm -rf vendor/tecno/LG7n &&
@@ -13,10 +12,7 @@ rm -rf vendor/JamesDSP &&
 rm -rf hardware/mediatek &&
 rm -rf hardware/transsion &&
 rm -rf device/mediatek/sepolicy_vndr &&
-rm -rf vendor/infinity-priv/keys &&
 rm -rf build/soong &&
-rm -rf vendor/google/gms &&
-rm -rf vendor/gms &&
 
 #Clone local manifests
 git clone https://github.com/Novicio-2309/local_manifests.git -b mistOS16-Bp2a .repo/local_manifests &&
