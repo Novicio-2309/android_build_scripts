@@ -21,6 +21,9 @@ rm -rf vendor/gms &&
 # Clone updated local manifest
 git clone https://github.com/Novicio-2309/local_manifests.git -b cherishOS-16 .repo/local_manifests &&
 
+# Syncing the source
+repo init -u https://github.com/CherishOS/android_manifest.git -b sixteen &&
+
 # Sync sources with new manifest
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags &&
 
