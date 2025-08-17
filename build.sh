@@ -15,7 +15,7 @@ rm -rf device/mediatek/sepolicy_vndr &&
 rm -rf build/soong &&
 
 #Clone local manifests
-git clone https://github.com/Novicio-2309/local_manifests.git -b mistOS16-Bp2a .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b cherishOS-16 .repo/local_manifests &&
 
 #Repo init
 repo init -u https://github.com/CherishOS/android_manifest.git -b sixteen &&
@@ -28,5 +28,5 @@ git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/cherish-pr
 
 #Setup environment and start build
 . build/envsetup.sh &&
-brunch LG7n
+brunch cherish_LG7n
 "
