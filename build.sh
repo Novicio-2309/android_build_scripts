@@ -2,7 +2,8 @@
 set -e
 
 crave run --no-patch -- "
-rm -rf .repo/local_manifests &&
+rm -rf prebuilts/clang/host/linux-x86 &&
+rm -rf platform/prebuilts/clang/host/linux-x86 &&
 
 #Clone local manifests
 git clone https://github.com/Novicio-2309/local_manifests.git -b infinity-16-bp2a .repo/local_manifests &&
