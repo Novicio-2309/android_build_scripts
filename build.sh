@@ -12,7 +12,7 @@ git clone https://github.com/Novicio-2309/local_manifests.git -b infinity-16-bp2
 repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 16 -g default,-mips,-darwin,-notdefault &&
 
 #Sync the full source
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) &&
+repo sync --force-sync &&
 
 #signing keys and run setup
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/infinity-priv/keys &&
