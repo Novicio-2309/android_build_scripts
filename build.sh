@@ -18,16 +18,16 @@ rm -rf prebuilts/clang/host/linux-x86
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
 
 # Manifest
-# Manifest
 git clone https://github.com/Novicio-2309/local_manifests.git -b infinity-16-bp2a .repo/local_manifests &&
 
 # Initializing repo
 repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 16 -g default,-mips,-darwin,-notdefault &&
 
 # Syncing repo
-repo sync --force-sync
+repo sync --force-sync &&
 
 # Signingkey
+git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
 
 #Setup environment and start build
 . build/envsetup.sh &&
