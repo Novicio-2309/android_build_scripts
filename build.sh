@@ -21,7 +21,7 @@ rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x8 &&
 
 #Clone local manifests
-git clone https://github.com/Novicio-2309/local_manifests.git -b mistOS16-Bp2a .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b voltage-16 .repo/local_manifests &&
 
 #Repo init
 repo init -u https://github.com/VoltageOS/manifest.git -b 16 --git-lfs
@@ -29,11 +29,8 @@ repo init -u https://github.com/VoltageOS/manifest.git -b 16 --git-lfs
 # Syncing repo
 repo sync
 
-#Sync the full source
-repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all) &&
-
 #signing keys and run setup
-git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
+git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/voltage-priv/keys &&
 
 #Setup environment and start build
 . build/envsetup.sh &&
