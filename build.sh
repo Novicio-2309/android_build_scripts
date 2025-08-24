@@ -21,14 +21,14 @@ rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf out &&
 
-#Repo init
-repo init -u https://github.com/Project-Mist-OS/manifest.git -b 16 --git-lfs &&
-
 #Clone local manifests
 git clone https://github.com/Novicio-2309/local_manifests.git -b LH7n-mistOS16 .repo/local_manifests &&
 
+#Repo init
+repo init -u https://github.com/Project-Mist-OS/manifest.git -b 16 --git-lfs &&
+
 #Sync the full source
-repo sync -c --force-sync &&
+repo sync --force-sync &&
 
 #signing keys and run setup
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
