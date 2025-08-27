@@ -2,7 +2,6 @@
 set -e
 
   crave run --no-patch -- "
-  # 🔹 Hakbang 1: Linisin ang mga lumang manifest, soong, at keys
   rm -rf .repo/local_manifests &&
   rm -rf device/tecno/LG7n &&
   rm -rf device/tecno/mt6789-common &&
