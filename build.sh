@@ -20,6 +20,8 @@ crave run --no-patch -- "
   rm -rf build/soong &&
   rm -rf vendor/google/gms &&
   rm -rf vendor/gms &&
+  rm -rf prebuilts/clang/host/linux-x86 &&
+  rm -rf platform/prebuilts/clang/host/linux-x86 &&
 
   # Local manifest
   git clone https://github.com/Novicio-2309/local_manifests.git -b evox16 .repo/local_manifests &&
@@ -31,9 +33,10 @@ crave run --no-patch -- "
   repo sync --force-sync &&
   
   # Signgkey
+  git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/evolution-priv/keys &&
   
   # 🔹 Hakbang 6: I-setup ang environment at simulan ang pag-build
-  . build/envsetup.sh && \
-  lunch lineage_LG7n-bp2a-userdebug && \
+  . build/envsetup.sh &&
+  lunch lineage_LG7n-bp2a-userdebug &&
   m evolution
-"
+  "
