@@ -1,5 +1,5 @@
-#!/bin/bash
-set -e
+  #!/bin/bash
+  set -e
 
   crave run --no-patch -- "
   rm -rf .repo/local_manifests &&
