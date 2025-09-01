@@ -17,6 +17,9 @@ rm -rf vendor/lineage-priv/keys &&
 rm -rf build/soong &&
 rm -rf vendor/google/gms &&
 rm -rf vendor/gms &&
+rm -rf prebuilts/clang/host/linux-x86 &&
+rm -rf platform/prebuilts/clang/host/linux-x86 &&
+rm -rf out &&
 
 #Repo init
 repo init -u https://github.com/Project-Mist-OS/manifest.git -b 16 --git-lfs &&
@@ -25,7 +28,7 @@ repo init -u https://github.com/Project-Mist-OS/manifest.git -b 16 --git-lfs &&
 git clone https://github.com/Novicio-2309/local_manifests.git -b mistOS16-Bp2a .repo/local_manifests &&
 
 #Sync the full source
-repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all) &&
+repo sync --force-sync &&
 
 #signing keys and run setup
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
