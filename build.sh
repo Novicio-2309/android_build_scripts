@@ -10,6 +10,7 @@ rm -rf vendor/tecno/LG7n &&
 rm -rf vendor/tecno/mt6789-common &&
 rm -rf vendor/sony/dolby &&
 rm -rf vendor/JamesDSP &&
+rm -rf packages/apps/ViPER4AndroidFX &&
 rm -rf hardware/mediatek &&
 rm -rf hardware/transsion &&
 rm -rf device/mediatek/sepolicy_vndr &&
@@ -25,7 +26,7 @@ rm -rf out &&
 git clone https://github.com/Novicio-2309/local_manifests.git -b LH7n-mistOS16 .repo/local_manifests &&
 
 #Repo init
-repo init -u https://github.com/Project-Mist-OS/manifest.git -b 16 --git-lfs &&
+repo init -u https://github.com/Project-Mist-OS/manifest -b 16 --git-lfs &&
 
 #Sync the full source
 repo sync --force-sync &&
