@@ -23,10 +23,10 @@ rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf out &&
 
 #Clone local manifests
-git clone https://github.com/Novicio-2309/local_manifests.git -b LH7n-mistOS16 .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b LH7n-rising16 .repo/local_manifests &&
 
 #Repo init
-repo init -u https://github.com/Project-Mist-OS/manifest -b 16 --git-lfs &&
+repo init -u https://github.com/RisingOS-Revived/android -b sixteen-los --git-lfs &&
 
 #Sync the full source
 repo sync --force-sync &&
