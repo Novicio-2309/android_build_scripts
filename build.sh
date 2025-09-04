@@ -36,6 +36,6 @@ git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-pr
 
 #Setup environment and start build
 . build/envsetup.sh &&
-riseup LG7n userdebug &&
+riseup LH7n userdebug &&
 rise b
 "
