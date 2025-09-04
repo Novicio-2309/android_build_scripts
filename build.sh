@@ -29,7 +29,7 @@ rm -rf out &&
 git clone https://github.com/Novicio-2309/local_manifests.git -b LH7n-derp16 .repo/local_manifests &&
 
 #Repo init
-repo init -u https://github.com/RisingOS-Revived/android -b sixteen-los --git-lfs &&
+repo init -u https://github.com/DerpFest-AOSP/android_manifest.git -b 16 --git-lfs &&
 
 #Sync the full source
 repo sync --force-sync &&
@@ -39,6 +39,6 @@ git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-pr
 
 #Setup environment and start build
 . build/envsetup.sh &&
-riseup LG7n userdebug &&
-rise b
+lunch lineage_LH7n-bp2a-userdebug &&
+mka derp
 "
