@@ -4,9 +4,10 @@ set -e
 crave run --no-patch -- "
 rm -rf .repo/local_manifests &&
 rm -rf device/tecno/LG7n &&
+rm -rf device/tecno/LH7n &&
 rm -rf device/tecno/mt6789-common &&
-rm -rf device/tecno/LG7n-kernel &&
-rm -rf vendor/tecno/LG7n &&
+rm -rf device/tecno/LH7n-kernel &&
+rm -rf vendor/tecno/LH7n &&
 rm -rf vendor/tecno/mt6789-common &&
 rm -rf vendor/sony/dolby &&
 rm -rf vendor/JamesDSP &&
@@ -25,7 +26,7 @@ rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf out &&
 
 #Clone local manifests
-git clone https://github.com/Novicio-2309/local_manifests.git -b rising16-bp2a .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b LH7n-derp16 .repo/local_manifests &&
 
 #Repo init
 repo init -u https://github.com/RisingOS-Revived/android -b sixteen-los --git-lfs &&
