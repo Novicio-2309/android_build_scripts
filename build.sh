@@ -10,6 +10,7 @@ rm -rf device/tecno/LG7n-kernel &&
 rm -rf device/tecno/LH7n-kernel &&
 rm -rf vendor/tecno/LG7n &&
 rm -rf vendor/tecno/LH7n &&
+rm -rf vendor/official_devices &&
 rm -rf vendor/tecno/mt6789-common &&
 rm -rf vendor/sony/dolby &&
 rm -rf vendor/JamesDSP &&
