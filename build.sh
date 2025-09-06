@@ -25,7 +25,7 @@ rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf out &&
 
 # Local Manifest cloning
-git clone https://github.com/Novicio-2309/local_manifests.git -b infinity-16-bp2a .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b alphadroid15 .repo/local_manifests &&
 
 # Initialize Repo
 # Initialize local repository
