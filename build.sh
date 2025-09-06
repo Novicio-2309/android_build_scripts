@@ -32,7 +32,7 @@ git clone https://github.com/Novicio-2309/local_manifests.git -b alphadroid15 .r
 repo init -u https://github.com/alphadroid-project/manifest -b alpha-15.2 --git-lfs &&
 
 # Syncing repo
-repo sync &&
+repo sync --force-sync &&
 
 # Signingkey
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
