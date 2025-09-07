@@ -28,7 +28,7 @@ rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf out &&
 
 # Clone updated local manifest
-git clone https://github.com/Novicio-2309/local_manifests.git -b cherishOS-16 .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b cherishOS16 .repo/local_manifests &&
 
 # Syncing the source
 repo init -u https://github.com/CherishOS/android_manifest.git -b sixteen &&
