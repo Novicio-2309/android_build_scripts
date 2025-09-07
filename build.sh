@@ -2,17 +2,16 @@
 set -e
 
 crave run --no-patch -- "
-# fix blocked Android.mk (Cherish issue)
-find hardware/google/ -type f -name 'Android.mk' -exec mv {} {}.bak \; || true &&
+# Fix Cherish issue: block Android.mk inside hardware/google
+find hardware/google/ -type f -name 'Android.mk' -exec mv {} {}.bak \; || true
 
-# clear build cache (safe lang, hindi kasama ccache)
-rm -rf out/soong out/target &&
+# Clear build output (safe, hindi kasama ccache)
+rm -rf out/soong out/target
 
-# setup environment
+# Setup environment
 export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
-add_lunch_combo cherish_LG7n-userdebug || true
 
-# start build
-brunch LG7n
+# Start build (now registered via COMMON_LUNCH_CHOICES)
+brunch cherish_LG7n-userdebug
 "
