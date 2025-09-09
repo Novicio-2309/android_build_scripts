@@ -22,6 +22,7 @@ rm -rf build/soong &&
 rm -rf vendor/google/gms &&
 rm -rf vendor/gms &&
 rm -rf device/lineage/sepolicy &&
+rm -rf prebuilts/gcc/linux-x86/x86/x86_64-linu x-android-4.9 &&
 rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf out &&
