@@ -17,6 +17,7 @@ rm -rf device/mediatek/sepolicy_vndr &&
 rm -rf vendor/lineage-priv/keys &&
 rm -rf vendor/derp/signing/keys &&
 rm -rf vendor/voltage-priv/keys &&
+rm -rf vendor/infinity-priv/keys &&
 rm -rf build/soong &&
 rm -rf vendor/google/gms &&
 rm -rf vendor/gms &&
