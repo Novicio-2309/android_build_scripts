@@ -25,19 +25,19 @@ rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf out &&
 
 #Clone local manifests
-git clone https://github.com/Novicio-2309/local_manifests.git -b rising16-bp2a .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b 2by2-16 .repo/local_manifests &&
 
 #Repo init
-repo init -u https://github.com/RisingOS-Revived/android -b sixteen-los --git-lfs &&
+repo init -u https://github.com/2by2-Project/manifest.git -b Bismuth --git-lfs &&
 
 #Sync the full source
 repo sync --force-sync &&
 
 #signing keys and run setup
-git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
+git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/2by2/signing/keys &&
 
 #Setup environment and start build
 . build/envsetup.sh &&
-riseup LG7n userdebug &&
-rise b
+lunch 2by2_LG7n-userdebug &&
+m bacon
 "
