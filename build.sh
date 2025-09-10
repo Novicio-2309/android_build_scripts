@@ -29,7 +29,7 @@ rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf out &&
 
 #Clone local manifests
-git clone https://github.com/Novicio-2309/local_manifests.git -b lineage-23.0 .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b crdroid16 .repo/local_manifests &&
 
 #Repo init
 repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --git-lfs --no-clone-bundle &&
