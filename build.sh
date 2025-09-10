@@ -2,7 +2,7 @@
 set -e
 
 crave run --no-patch -- "
-repo sync --force-sync -j$(nproc --all) &&
+repo sync --force-sync &&
 
 # Clean only target outputs (not full clean, safe for Crave)
 rm -rf out/target out/soong &&
