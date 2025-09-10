@@ -1,17 +1,18 @@
 #!/bin/bash
 set -e
 
-# Sync source with latest changes
-repo sync --force-sync -j$(nproc --all)
+crave run --no-patch -- "
+repo sync --force-sync -j$(nproc --all) &&
 
 # Clean only target outputs (not full clean, safe for Crave)
-rm -rf out/target out/soong
+rm -rf out/target out/soong &&
 
 # Setup environment
-. build/envsetup.sh
+. build/envsetup.sh &&
 
 # Lunch your device
-lunch lineage_LG7n-bp2a-userdebug
+lunch lineage_LG7n-bp2a-userdebug &&
 
 # Start build
 m lunaris
+"
