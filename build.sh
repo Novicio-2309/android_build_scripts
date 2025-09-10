@@ -28,19 +28,19 @@ rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf out &&
 
 #Clone local manifests
-git clone https://github.com/Novicio-2309/local_manifests.git -b 2by2-16 .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b lunaris16 .repo/local_manifests &&
 
 #Repo init
-repo init -u https://github.com/2by2-Project/manifest.git -b Bismuth --git-lfs &&
+repo init -u https://github.com/Lunaris-AOSP/android -b 16 --git-lfs &&
 
 #Sync the full source
 repo sync --force-sync &&
 
 #signing keys and run setup
-git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/2by2/signing/keys &&
+git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
 
 #Setup environment and start build
 . build/envsetup.sh &&
-lunch 2by2_LG7n-userdebug &&
-m bacon
+lunch lineage_LG7n-bp2a-userdebug &&
+m lunaris
 "
