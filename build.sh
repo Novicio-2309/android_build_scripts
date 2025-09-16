@@ -2,6 +2,7 @@
 set -e
 
 crave run --no-patch -- "
+# Clean up old trees
 rm -rf .repo/local_manifests &&
 rm -rf device/tecno/LH7n &&
 rm -rf device/tecno/LG7n &&
@@ -24,19 +25,19 @@ rm -rf vendor/gms &&
 rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
 
-# Local Manifest cloning
-git clone https://github.com/Novicio-2309/local_manifests.git -b alphadroid15 .repo/local_manifests &&
+# Initialize repo
+repo init -u https://github.com/alphadroid-project/manifest -b alpha-15.2 --git-lfs &&
 
-# Initialize Repo
-repo init -u https://github.com/alphadroid-project/manifest -b alpha-15.2 --git-lfs
+# Clone local manifest after init
+git clone https://github.com/Novicio-2309/local_manifests.git -b alphadroid15 .repo/local_manifests &&
 
 # Syncing repo
 repo sync --force-sync &&
 
-# Signingkey
+# Signing key
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/alpha-priv/keys &&
 
-#Setup environment and start build
+# Setup environment and start build
 . build/envsetup.sh &&
 lunch alpha_LG7n-userdebug &&
 make bacon
