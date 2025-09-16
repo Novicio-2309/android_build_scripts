@@ -28,8 +28,7 @@ rm -rf platform/prebuilts/clang/host/linux-x86 &&
 git clone https://github.com/Novicio-2309/local_manifests.git -b alphadroid15 .repo/local_manifests &&
 
 # Initialize Repo
-# Initialize local repository
-repo init -u https://github.com/alphadroid-project/manifest -b alpha-15.2 --git-lfs &&
+repo init -u https://github.com/alphadroid-project/manifest -b alpha-15.2 --git-lfs
 
 # Syncing repo
 repo sync --force-sync &&
