@@ -4,6 +4,7 @@ set -e
 crave run --no-patch -- "
 rm -rf .repo/local_manifests &&
 rm -rf device/tecno/LH7n &&
+rm -rf device/tecno/LG7n &&
 rm -rf device/tecno/mt6789-common &&
 rm -rf device/tecno/LG7n-kernel &&
 rm -rf device/tecno/LH7n-kernel &&
@@ -22,7 +23,6 @@ rm -rf vendor/google/gms &&
 rm -rf vendor/gms &&
 rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
-rm -rf out &&
 
 # Local Manifest cloning
 git clone https://github.com/Novicio-2309/local_manifests.git -b alphadroid15 .repo/local_manifests &&
@@ -35,7 +35,7 @@ repo init -u https://github.com/alphadroid-project/manifest -b alpha-15.2 --git-
 repo sync --force-sync &&
 
 # Signingkey
-git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
+git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/alpha-priv/keys &&
 
 #Setup environment and start build
 . build/envsetup.sh &&
