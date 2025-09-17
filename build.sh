@@ -19,11 +19,13 @@ rm -rf hardware/mediatek &&
 rm -rf hardware/transsion &&
 rm -rf device/mediatek/sepolicy_vndr &&
 rm -rf vendor/infinity-priv/keys &&
+rm -rf vendor/alpha-priv/keys &&
 rm -rf build/soong &&
 rm -rf vendor/google/gms &&
 rm -rf vendor/gms &&
 rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
+rm -rf out
 
 # Initialize repo
 repo init -u https://github.com/alphadroid-project/manifest -b alpha-15.2 --git-lfs &&
