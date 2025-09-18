@@ -22,6 +22,7 @@ rm -rf vendor/alpha-priv/keys &&
 rm -rf build/soong &&
 rm -rf vendor/google/gms &&
 rm -rf vendor/gms &&
+rm -rf device/lineage/sepolicy &&
 rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf out &&
