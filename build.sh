@@ -23,19 +23,19 @@ rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf out &&
 
 # Local Manifest cloning
-git clone https://github.com/Novicio-2309/local_manifests.git -b infinity-16-bp2a .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b thepixelproject16 .repo/local_manifests &&
 
 # Initialize Repo
-repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 16 -g default,-mips,-darwin,-notdefault &&
+repo init -u https://github.com/The-Pixel-Project/manifest -b 16  --git-lfs &&
 
 # Syncing repo
 repo sync --force-sync &&
 
 # Signingkey
-git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/infinity-priv/keys &&
+git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/aosp-priv/keys &&
 
 #Setup environment and start build
 . build/envsetup.sh &&
-lunch infinity_LG7n-userdebug &&
-m bacon
+lunch aosp_LG7n-userdebug &&
+make bacon
 "
