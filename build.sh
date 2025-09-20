@@ -28,11 +28,11 @@ rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf out &&
 
-#Clone local manifests
-git clone https://github.com/Novicio-2309/local_manifests.git -b derp16 .repo/local_manifests &&
-
 #Repo init
 repo init -u https://github.com/DerpFest-AOSP/android_manifest.git -b 16 --git-lfs &&
+
+#Clone local manifests
+git clone https://github.com/Novicio-2309/local_manifests.git -b derp16 .repo/local_manifests &&
 
 #Sync the full source
 repo sync --force-sync &&
