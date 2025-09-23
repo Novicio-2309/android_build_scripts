@@ -38,7 +38,7 @@ git clone https://github.com/Novicio-2309/local_manifests.git -b 2by2-16 .repo/l
 repo init -u https://github.com/2by2-Project/manifest.git -b Bismuth --git-lfs &&
 
 #Sync the full source
-repo sync -j$(nproc --all) &&
+repo sync --force-sync  &&
 
 #signing keys and run setup
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/2by2/signing/keys &&
