@@ -25,6 +25,7 @@ rm -rf build/soong &&
 rm -rf vendor/google/gms &&
 rm -rf vendor/gms &&
 rm -rf device/lineage/sepolicy &&
+rm -rf external/chromium-webview &&
 rm -rf prebuilts/gcc/linux-x86/x86/x86_64-linu x-android-4.9 &&
 rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
@@ -37,7 +38,7 @@ git clone https://github.com/Novicio-2309/local_manifests.git -b 2by2-16 .repo/l
 repo init -u https://github.com/2by2-Project/manifest.git -b Bismuth --git-lfs &&
 
 #Sync the full source
-/opt/crave/resync.sh &&
+repo sync -j$(nproc --all) &&
 
 #signing keys and run setup
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/2by2/signing/keys &&
