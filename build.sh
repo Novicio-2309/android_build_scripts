@@ -39,7 +39,7 @@ repo init -u https://github.com/CherishOS/android_manifest.git -b sixteen &&
 repo sync --force-sync &&
 
 #signing keys and run setup
-git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
+git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/cherish-priv/keys &&
 
 #Setup environment and start build
 . build/envsetup.sh &&
