@@ -29,7 +29,7 @@ rm -rf out &&
 git clone https://github.com/Novicio-2309/local_manifests.git -b rising16-bp2a .repo/local_manifests &&
 
 #Repo init
-repo init -u https://github.com/RisingOS-Revived/android -b sixteen-los --git-lfs &&
+repo init -u https://github.com/RisingOS-Revived/android -b sixteen --git-lfs &&
 
 #Sync the full source
 repo sync --force-sync &&
