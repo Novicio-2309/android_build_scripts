@@ -18,6 +18,7 @@ rm -rf hardware/mediatek &&
 rm -rf hardware/transsion &&
 rm -rf device/mediatek/sepolicy_vndr &&
 rm -rf vendor/lineage-priv/keys &&
+rm -rf vendor/evolution-priv/keys &&
 rm -rf vendor/derp/signing/keys &&
 rm -rf vendor/voltage-priv/keys &&
 rm -rf build/soong &&
