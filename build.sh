@@ -29,19 +29,18 @@ rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf out &&
 
 #Clone local manifests
-git clone https://github.com/Novicio-2309/local_manifests.git -b rising16-bp2a .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b witaqua16 .repo/local_manifests &&
 
 #Repo init
-repo init -u https://github.com/RisingOS-Revived/android -b sixteen --git-lfs &&
+repo init -u https://github.com/WitAqua/manifest.git -b 16.0 --git-lfs &&
 
 #Sync the full source
 repo sync --force-sync &&
 
 #signing keys and run setup
-git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
+git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/witaqua-priv/keys &&
 
 #Setup environment and start build
 . build/envsetup.sh &&
-riseup LG7n userdebug &&
-rise b
+brunch LG7n
 "
