@@ -20,6 +20,7 @@ rm -rf hardware/transsion &&
 rm -rf device/mediatek/sepolicy_vndr &&
 rm -rf vendor/infinity-priv/keys &&
 rm -rf vendor/alpha-priv/keys &&
+rm -rf vendor/witaqua-priv/keys &&
 rm -rf build/soong &&
 rm -rf vendor/google/gms &&
 rm -rf vendor/gms &&
@@ -30,16 +31,16 @@ rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf out &&
 
 # Initialize repo
-repo init -u https://github.com/alphadroid-project/manifest -b alpha-15.2 --git-lfs &&
+repo init -u https://github.com/alphadroid-project/manifest -b alpha-16.1 --git-lfs &&
 
 # Clone local manifest after init
-git clone https://github.com/Novicio-2309/local_manifests.git -b alphadroid15 .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b alphadroid16 .repo/local_manifests &&
 
 # Syncing repo
 repo sync --force-sync &&
 
 # Signing key
-git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/alpha-priv/keys &&
+git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
 
 # Setup environment and start build
 . build/envsetup.sh &&
