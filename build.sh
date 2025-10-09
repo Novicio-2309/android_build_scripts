@@ -2,7 +2,7 @@
 set -e
 
 crave run --no-patch -- "
-# Clean up old trees
+# Clean up old trees (This section should contain all your rm -rf commands)
 rm -rf .repo/local_manifests &&
 rm -rf device/tecno/LH7n &&
 rm -rf device/tecno/LG7n &&
@@ -36,7 +36,17 @@ repo init -u https://github.com/alphadroid-project/manifest -b alpha-16.1 --git-
 # Clone local manifest after init
 git clone https://github.com/Novicio-2309/local_manifests.git -b alphadroid16 .repo/local_manifests &&
 
-# Syncing repo
+# --- SYNC ATTEMPT 1: Hahayaan itong mag-fail at mag-download ng metadata ---
+repo sync --force-sync || true &&
+
+# --- SYNC FIX: Tatanggalin ang Corrupted Metadata (Telegram Fix) ---
+echo "Applying sync fix..." &&
+
+rm -rf .repo/projects/manifest_git &&
+rm -rf .repo/projects/packages/inputmethods/LatinIME.git &&
+rm -rf packages/inputmethods/LatinIME &&
+
+# --- SYNC ATTEMPT 2: Final Sync. Dito maaayos at makukumpleto ang files ---
 repo sync --force-sync &&
 
 # Signing key
