@@ -27,7 +27,7 @@ rm -rf out &&
 git clone https://github.com/Novicio-2309/local_manifests.git -b mistOS16-Bp2a .repo/local_manifests &&
 
 #Repo init
-repo init -u https://github.com/Project-Mist-OS/manifest -b 16 --git-lfs &&
+repo init -u https://github.com/Project-Mist-OS/manifest -b bp2a --git-lfs &&
 
 #Sync the full source
 repo sync --force-sync &&
