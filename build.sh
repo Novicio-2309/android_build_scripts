@@ -36,7 +36,7 @@ git clone https://github.com/Novicio-2309/local_manifests.git -b lunaris16 .repo
 repo init -u https://github.com/Lunaris-AOSP/android -b 16 --git-lfs &&
 
 #Sync the full source
-/opt/crave/resync.sh &&
+repo sync --force-sync &&
 
 #signing keys and run setup
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
