@@ -28,6 +28,7 @@ rm -rf device/lineage/sepolicy &&
 rm -rf external/chromium-webview &&
 rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
+rm -rf vendor/official_devices &&
 rm -rf out &&
 
 # Initialize repo
