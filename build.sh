@@ -4,11 +4,11 @@ set -e
 crave run --no-patch -- "
 rm -rf .repo/local_manifests &&
 
+#Clone local manifests
+git clone https://github.com/Novicio-2309/device_xiaomi_amethysu-twrp device/xiaomi/amethyst &&
+
 #Repo init
 repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-14.1 &&
-
-#Clone local manifests
-git clone https://github.com/Novicio-2309/device_xiaomi_amethys-twrp &&
 
 #Sync the full source
 repo sync --force-sync &&
