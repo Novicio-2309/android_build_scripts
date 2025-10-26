@@ -19,6 +19,7 @@ rm -rf hardware/mediatek &&
 rm -rf hardware/transsion &&
 rm -rf device/mediatek/sepolicy_vndr &&
 rm -rf vendor/infinity-priv/keys &&
+rm -rf vendor/lineage-priv/keys &&
 rm -rf vendor/alpha-priv/keys &&
 rm -rf vendor/witaqua-priv/keys &&
 rm -rf build/soong &&
