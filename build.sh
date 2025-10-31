@@ -33,7 +33,7 @@ git clone https://github.com/Novicio-2309/local_manifests.git -b luminedroid16 .
 repo init -u https://github.com/LumineDroid/platform_manifest.git -b bynx --git-lfs &&
 
 # Syncing repo
-repo sync --force-sync &&
+/opt/crave/resync.sh &&
 
 # Signingkey
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
