@@ -25,22 +25,21 @@ rm -rf vendor/official_devices &&
 rm -rf external/chromium-webview &&
 rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
-rm -rf out &&
-
-# Initialize Repo
-repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 16 -g default,-mips,-darwin,-notdefault &&
 
 # Local Manifest cloning
-git clone https://github.com/Novicio-2309/local_manifests.git -b infinity-16-bp2a .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b luminedroid16 .repo/local_manifests &&
+
+# Initialize Repo
+repo init -u https://github.com/LumineDroid/platform_manifest.git -b bynx --git-lfs &&
 
 # Syncing repo
 repo sync --force-sync &&
 
 # Signingkey
-git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/infinity-priv/keys &&
+git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
 
 #Setup environment and start build
 . build/envsetup.sh &&
-lunch infinity_LG7n-userdebug &&
+lunch lumine_LG7n-userdebug &&
 m bacon
 "
