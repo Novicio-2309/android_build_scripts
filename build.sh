@@ -29,7 +29,7 @@ git clone https://github.com/Novicio-2309/local_manifests.git -b mistOS16-Bp2a .
 repo init -u https://github.com/Project-Mist-OS/manifest -b bp2a --git-lfs &&
 
 #Sync the full source
-/opt/crave/resync.sh
+/opt/crave/resync.sh &&
 
 #signing keys and run setup
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
