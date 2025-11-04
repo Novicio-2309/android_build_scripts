@@ -33,7 +33,7 @@ git clone https://github.com/Novicio-2309/local_manifests.git -b LH7n-infinity16
 repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 16 -g default,-mips,-darwin,-notdefault &&
 
 # Syncing repo
-repo sync --force-sync &&
+/opt/crave/resync.sh &&
 
 # Signingkey
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/infinity-priv/keys &&
