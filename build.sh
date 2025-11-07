@@ -22,6 +22,7 @@ rm -rf vendor/derp/signing/keys &&
 rm -rf vendor/voltage-priv/keys &&
 rm -rf build/soong &&
 rm -rf vendor/google/gms &&
+rm -rf vendor/google/overlays &&
 rm -rf vendor/gms &&
 rm -rf external/chromium-webview &&
 rm -rf device/lineage/sepolicy &&
