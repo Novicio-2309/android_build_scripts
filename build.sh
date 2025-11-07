@@ -28,7 +28,6 @@ rm -rf device/lineage/sepolicy &&
 rm -rf vendor/official_devices &&
 rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
-rm -rf out &&
 
 #Clone local manifests
 git clone https://github.com/Novicio-2309/local_manifests.git -b lunaris16 .repo/local_manifests &&
