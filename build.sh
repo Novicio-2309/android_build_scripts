@@ -31,7 +31,7 @@ rm -rf out &&
 git clone https://github.com/Novicio-2309/local_manifests.git -b rising16-bp2a .repo/local_manifests &&
 
 #Repo init
-repo init -u https://github.com/RisingOS-Revived/android -b sixteen --git-lfs &&
+repo init -u https://github.com/LineageOS/android.git -b lineage-23.0 --git-lfs &&
 
 #Sync the full source
 repo sync --force-sync &&
@@ -41,6 +41,5 @@ git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-pr
 
 #Setup environment and start build
 . build/envsetup.sh &&
-riseup LG7n userdebug &&
-rise b
+brunch LG7n
 "
