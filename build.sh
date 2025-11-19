@@ -1,4 +1,4 @@
-#!/bin/bash
+ #!/bin/bash
 set -e
 
 crave run --no-patch -- "
@@ -34,7 +34,7 @@ git clone https://github.com/Novicio-2309/local_manifests.git -b crdroid16 .repo
 repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --git-lfs --no-clone-bundle &&
 
 #Sync the full source
-repo sync --force-sync &&
+/opt/crave/resync.sh &&
 
 #signing keys and run setup
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
