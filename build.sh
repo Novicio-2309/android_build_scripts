@@ -27,7 +27,7 @@ rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
 
 #Clone local manifests
-git clone https://github.com/Novicio-2309/local_manifests.git -b lineage-23.0 .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b lineage-23.0-abyssgard .repo/local_manifests &&
 
 #Repo init
 repo init -u https://github.com/LineageOS/android.git -b lineage-23.0 --git-lfs &&
