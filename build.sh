@@ -25,7 +25,6 @@ rm -rf vendor/official_devices &&
 rm -rf external/chromium-webview &&
 rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
-rm -rf out &&
 
 #Clone local manifests
 git clone https://github.com/Novicio-2309/local_manifests.git -b lineage-23.0 .repo/local_manifests &&
