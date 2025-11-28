@@ -12,4 +12,4 @@ or if you have one running,
 ```mkdir rom_name; cd rom_name```
 
 ## Pull and Run this script
-$ curl -sf https://raw.githubusercontent.com/Novicio-2309/android_build_scripts/repo init -u https://github.com/AviumUI/avium16qpr0/build.sh | sh
+$ curl -sf https://raw.githubusercontent.com/Novicio-2309/android_build_scripts/avium16qpr0/build.sh | sh
