@@ -33,7 +33,7 @@ rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
 
 #Clone local manifests
-git clone https://github.com/Novicio-2309/local_manifests.git -b aviumui16 .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b avium16qpr0 .repo/local_manifests &&
 
 #Repo init
 repo init -u https://github.com/AviumUI/android_manifests -b avium-16 --git-lfs &&
