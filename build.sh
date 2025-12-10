@@ -30,7 +30,7 @@ rm -rf platform/prebuilts/clang/host/linux-x86 &&
 repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 16 -g default,-mips,-darwin,-notdefault &&
 
 # Local Manifest cloning
-git clone https://github.com/Novicio-2309/local_manifests.git -b infinity-16-bp2a .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b infinityXQPR0 .repo/local_manifests &&
 
 # Syncing repo
 /opt/crave/resync.sh &&
