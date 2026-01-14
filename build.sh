@@ -27,19 +27,19 @@ rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
 
 # Initialize Repo
-repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 16 -g default,-mips,-darwin,-notdefault &&
+repo init -u https://github.com/Evolution-X/manifest -b bq1 --git-lfs &&
 
 # Local Manifest cloning
-git clone https://github.com/Novicio-2309/local_manifests.git -b infinityXQpr1-LG7n .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b evoxQpr1-LG7n .repo/local_manifests &&
 
 # Syncing repo
 /opt/crave/resync.sh &&
 
 # Signingkey
-git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/infinity-priv/keys &&
+git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/evolution-priv/keys &&
 
 #Setup environment and start build
 . build/envsetup.sh &&
-lunch infinity_LG7n-userdebug &&
-m bacon
+lunch lineage_LG7n-bp3a-userdebug &&
+m evolution
 "
