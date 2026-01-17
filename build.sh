@@ -14,8 +14,5 @@ repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifes
 /opt/crave/resync.sh &&
 
 #Setup environment and start build
-export ALLOW_MISSING_DEPENDENCIES=true &&
-. build/envsetup.sh &&
-lunch twrp_amethyst-eng &&
-mka recoveryimage
+lunch twrp_amethyst-ap2a-eng && mka adbd recoveryimage
 "
