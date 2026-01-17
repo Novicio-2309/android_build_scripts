@@ -8,7 +8,7 @@ rm -rf .repo/local_manifests &&
 git clone https://github.com/Novicio-2309/device_xiaomi_amethyst-recovery &&
 
 #Repo init
-repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-14.1 &&
+repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-14 &&
 
 #Sync the full source
 /opt/crave/resync.sh &&
