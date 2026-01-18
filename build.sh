@@ -14,5 +14,5 @@ repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aos
 /opt/crave/resync.sh &&
 
 #Setup environment and start build
-lunch twrp_amethyst-ap2a-eng && mka adbd recoveryimage
+source build/envsetup.sh && lunch twrp_amethyst-ap2a-eng && mka adbd recoveryimage
 "
