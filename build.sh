@@ -3,6 +3,7 @@ set -e
 
 crave run --no-patch -- "
 rm -rf .repo/local_manifests &&
+rm -rf device_xiaomi_amethyst-recovery &&
 
 #Clone local manifests
 git clone https://github.com/Novicio-2309/device_xiaomi_amethyst-recovery &&
