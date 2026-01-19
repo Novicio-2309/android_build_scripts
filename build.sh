@@ -25,6 +25,7 @@ rm -rf vendor/official_devices &&
 rm -rf external/chromium-webview &&
 rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
+rm -rf prebuilts/clang/host/linux-x86/clang-r536225/bin &&
 
 # Initialize Repo
 repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 16 -g default,-mips,-darwin,-notdefault &&
