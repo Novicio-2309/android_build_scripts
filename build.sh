@@ -26,6 +26,8 @@ rm -rf vendor/official_devices &&
 rm -rf external/chromium-webview &&
 rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
+rm -rf vendor/sony/dolby/LunarisDolby &&
+rm -rf packages/apps/DolbyAtmos &&
 
 # Initialize Repo
 repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --git-lfs --no-clone-bundle &&
