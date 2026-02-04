@@ -21,6 +21,7 @@ rm -rf vendor/lineage-priv/keys &&
 rm -rf vendor/evolution-priv/keys &&
 rm -rf vendor/derp/signing/keys &&
 rm -rf vendor/voltage-priv/keys &&
+rm -rf vendor/infinity-priv/keys &&
 rm -rf build/soong &&
 rm -rf vendor/google/gms &&
 rm -rf vendor/gms &&
@@ -36,7 +37,7 @@ repo init -u https://github.com/DerpFest-AOSP/android_manifest.git -b 16 --git-l
 git clone https://github.com/Novicio-2309/local_manifests.git -b Derp16Qpr2 .repo/local_manifests &&
 
 #Sync the full source
-repo sync --force-sync &&
+/opt/crave/resync.sh &&
 
 #signing keys and run setup
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
