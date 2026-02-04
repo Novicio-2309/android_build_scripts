@@ -44,6 +44,6 @@ git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-pr
 
 #Setup environment and start build
 . build/envsetup.sh &&
-lunch lineage_LG7n-bp2a-userdebug &&
+lunch lineage_LG7n-bp4a-userdebug &&
 mka derp
 "
