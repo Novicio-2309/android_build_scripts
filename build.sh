@@ -28,13 +28,12 @@ rm -rf device/lineage/sepolicy &&
 rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf vendor/official_devices &&
-rm -rf out &&
 
 #Repo init
 repo init -u https://github.com/DerpFest-AOSP/android_manifest.git -b 16 --git-lfs &&
 
 #Clone local manifests
-git clone https://github.com/Novicio-2309/local_manifests.git -b derp16 .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b Derp16Qpr2 .repo/local_manifests &&
 
 #Sync the full source
 repo sync --force-sync &&
