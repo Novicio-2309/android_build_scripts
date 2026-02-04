@@ -31,7 +31,7 @@ rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf vendor/official_devices &&
 
 #Repo init
-repo init -u https://github.com/DerpFest-AOSP/android_manifest.git -b 16 --git-lfs &&
+repo init -u https://github.com/DerpFest-AOSP/android_manifest.git -b 16.2 --git-lfs &&
 
 #Clone local manifests
 git clone https://github.com/Novicio-2309/local_manifests.git -b Derp16Qpr2 .repo/local_manifests &&
