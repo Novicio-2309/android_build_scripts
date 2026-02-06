@@ -32,19 +32,19 @@ rm -rf vendor/official_devices &&
 rm -rf prebuilts/clang/host/linux-x86/clang-r530567/bin &&
 
 #Repo init
-repo init -u https://github.com/DerpFest-AOSP/android_manifest.git -b 16.2 --git-lfs &&
+repo init -u https://github.com/Miku-UI/manifesto -b Blooming_v2 --git-lfs &&
 
 #Clone local manifests
-git clone https://github.com/Novicio-2309/local_manifests.git -b Derp16Qpr2 .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b Miku16QPR2 .repo/local_manifests &&
 
 #Sync the full source
 /opt/crave/resync.sh &&
 
 #signing keys and run setup
-git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
+git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/miku-priv/keys &&
 
 #Setup environment and start build
 . build/envsetup.sh &&
-lunch lineage_LG7n-bp4a-userdebug &&
-mka derp
+lunch miku_LG7n-bp4a-userdebug &&
+make diva
 "
