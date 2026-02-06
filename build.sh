@@ -38,11 +38,11 @@ repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --git-lfs --n
 #Clone local manifests
 git clone https://github.com/Novicio-2309/local_manifests.git -b Crdroid16Qpr2 .repo/local_manifests &&
 
-# For gapps
-git clone https://gitlab.com/MindTheGapps/vendor_gapps.git -b sigma vendor/gapps
-
 #Sync the full source
 /opt/crave/resync.sh &&
+
+# For gapps
+git clone https://gitlab.com/MindTheGapps/vendor_gapps.git -b sigma vendor/gapps &&
 
 #signing keys and run setup
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
