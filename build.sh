@@ -29,22 +29,25 @@ rm -rf device/lineage/sepolicy &&
 rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf vendor/official_devices &&
+rm -rf vendor/gapps
 rm -rf prebuilts/clang/host/linux-x86/clang-r530567/bin &&
 
 #Repo init
-repo init -u https://github.com/Evolution-X/manifest -b bq2 --git-lfs &&
+repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --git-lfs --no-clone-bundle &&
 
 #Clone local manifests
-git clone https://github.com/Novicio-2309/local_manifests.git -b Evox16Qpr2 .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b Crdroid16Qpr2 .repo/local_manifests &&
+
+# For gapps
+git clone https://gitlab.com/MindTheGapps/vendor_gapps.git -b sigma vendor/gapps
 
 #Sync the full source
 /opt/crave/resync.sh &&
 
 #signing keys and run setup
-git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/evolution-priv/keys &&
+git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
 
 #Setup environment and start build
 . build/envsetup.sh &&
-lunch lineage_LG7n-bp4a-userdebug &&
-m evolution
+brunch LG7n
 "
