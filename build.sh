@@ -30,6 +30,7 @@ rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf vendor/official_devices &&
 rm -rf prebuilts/clang/host/linux-x86/clang-r530567/bin &&
+rm -rf prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9 &&
 
 #Repo init
 repo init -u https://github.com/Miku-UI/manifesto -b Blooming_v2 --git-lfs &&
