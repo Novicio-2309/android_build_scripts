@@ -32,10 +32,10 @@ rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
 
 #Clone local manifests
-git clone https://github.com/Novicio-2309/local_manifests.git -b lunaris16 .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b Lunaris16Qpr2 .repo/local_manifests &&
 
 #Repo init
-repo init -u https://github.com/Lunaris-AOSP/android -b 16 --git-lfs &&
+repo init -u https://github.com/Lunaris-AOSP/android -b 16.2 --git-lfs &&
 
 #Sync the full source
 /opt/crave/resync.sh &&
@@ -44,7 +44,7 @@ repo init -u https://github.com/Lunaris-AOSP/android -b 16 --git-lfs &&
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
 
 #Setup environment and start build
-. build/envsetup.sh &&
-lunch lineage_LG7n-bp2a-userdebug &&
-m lunaris
+. b*/env* &&
+lunch lineage_LG7n-bp4a-userdebug &&
+m bacon
 "
