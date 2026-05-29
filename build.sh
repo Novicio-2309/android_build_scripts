@@ -29,6 +29,7 @@ rm -rf device/lineage/sepolicy &&
 rm -rf prebuilts/clang/host/linux-x86 &&
 rm -rf platform/prebuilts/clang/host/linux-x86 &&
 rm -rf vendor/official_devices &&
+rm -rf packages/apps/Aperture &&
 rm -rf prebuilts/clang/host/linux-x86/clang-r530567/bin &&
 
 #Repo init
