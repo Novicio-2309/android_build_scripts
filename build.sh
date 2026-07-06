@@ -13,6 +13,9 @@ git clone https://github.com/Novicio-2309/local_manifests.git -b Infinity16-amet
 #Sync the full source
 /opt/crave/resync.sh &&
 
+#key
+git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/infinity-priv/keys &&
+
 #Setup environment and start build
 . build/envsetup.sh &&
 lunch infinity_amethyst-userdebug &&
