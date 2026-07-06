@@ -8,16 +8,13 @@ rm -rf .repo/local_manifests &&
 repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 16 -g default,-mips,-darwin,-notdefault &&
 
 #Clone local manifests
-git clone https://github.com/Novicio-2309/local_manifests.git -b InfinityX16Qpr2 .repo/local_manifests &&
+git clone https://github.com/Novicio-2309/local_manifests.git -b Infinity16-amethyst .repo/local_manifests &&
 
 #Sync the full source
 /opt/crave/resync.sh &&
 
-#signing keys and run setup
-git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/infinity-priv/keys &&
-
 #Setup environment and start build
 . build/envsetup.sh &&
-lunch infinity_LG7n-userdebug &&
+lunch infinity_amethyst-userdebug &&
 m bacon
 "
