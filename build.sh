@@ -3,6 +3,13 @@ set -e
 
 crave run --no-patch -- "
 rm -rf .repo/local_manifests &&
+rm -rf vendor/infinity-priv/keys &&
+rm -rf hardware/xioami &&
+rm -rf device/xioami/amethyst &&
+rm -rf device/xioami/amethyst-kernel &&
+rm -rf device/qcom/sepolicy_vndr/sm8650 &&
+rm -rf vendor/xioami/amethyst &&
+
 
 #Repo init
 repo init --depth=1 --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 16 -g default,-mips,-darwin,-notdefault &&
@@ -12,6 +19,10 @@ git clone https://github.com/Novicio-2309/local_manifests.git -b Infinity16-amet
 
 #Sync the full source
 /opt/crave/resync.sh &&
+
+#reclone sepolicy
+rm -rf device/qcom/sepolicy_vndr/sm8650 &&
+git clone https://github.com/amethyst-playground/android_device_qcom_sepolicy_vndr.git -b lineage-23.2-caf-sm8650 device/qcom/sepolicy_vndr/sm8650 --depth=1 &&
 
 #key
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/infinity-priv/keys &&
