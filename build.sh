@@ -24,6 +24,10 @@ git clone https://github.com/Novicio-2309/local_manifests.git -b Infinity16-amet
 rm -rf device/qcom/sepolicy_vndr/sm8650 &&
 git clone https://github.com/amethyst-playground/android_device_qcom_sepolicy_vndr.git -b lineage-23.2-caf-sm8650 device/qcom/sepolicy_vndr/sm8650 --depth=1 &&
 
+# Dolby Hardware
+rm -rf hardware/dolby &&
+git clone --depth=1 https://github.com/LineageOS-extra/android_hardware_dolby.git -b lineage-23.2 hardware/dolby &&
+
 #key
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/infinity-priv/keys &&
 
