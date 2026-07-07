@@ -4,11 +4,14 @@ set -e
 crave run --no-patch -- "
 rm -rf .repo/local_manifests &&
 rm -rf vendor/infinity-priv/keys &&
+rm -rf vendor/lineage-priv/keys &&
 rm -rf hardware/xioami &&
 rm -rf device/xioami/amethyst &&
 rm -rf device/xioami/amethyst-kernel &&
 rm -rf device/qcom/sepolicy_vndr/sm8650 &&
 rm -rf vendor/xioami/amethyst &&
+rm -rf device/qcom/sepolicy_vndr/sm8650 &&
+rm -rf hardware/dolby &&
 
 
 #Repo init
