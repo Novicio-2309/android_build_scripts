@@ -12,6 +12,14 @@ rm -rf device/qcom/sepolicy_vndr/sm8650 &&
 rm -rf vendor/xioami/amethyst &&
 rm -rf device/qcom/sepolicy_vndr/sm8650 &&
 rm -rf hardware/dolby &&
+rm -rf build/soong &&
+rm -rf vendor/google/gms &&
+rm -rf vendor/gms &&
+rm -rf device/lineage/sepolicy &&
+rm -rf prebuilts/clang/host/linux-x86 &&
+rm -rf platform/prebuilts/clang/host/linux-x86 &&
+rm -rf vendor/official_devices &&
+rm -rf prebuilts/clang/host/linux-x86/clang-r530567/bin &&
 
 
 #Repo init
