@@ -9,6 +9,7 @@ rm -rf device/xioami/amethyst &&
 rm -rf device/xioami/amethyst-kernel &&
 rm -rf device/qcom/sepolicy_vndr/sm8650 &&
 rm -rf vendor/xioami/amethyst &&
+rm -rf hardware/dolby &&
 
 
 #Repo init
