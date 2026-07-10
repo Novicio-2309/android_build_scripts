@@ -10,6 +10,7 @@ rm -rf device/xioami/amethyst-kernel &&
 rm -rf device/qcom/sepolicy_vndr/sm8650 &&
 rm -rf vendor/xioami/amethyst &&
 rm -rf hardware/dolby &&
+rm -rf packages/apps/ViPER4AndroidFX &&
 
 
 #Repo init
