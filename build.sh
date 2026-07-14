@@ -11,7 +11,7 @@ rm -rf device/qcom/sepolicy_vndr/sm8650 &&
 rm -rf vendor/xioami/amethyst &&
 rm -rf hardware/dolby &&
 rm -rf packages/apps/ViPER4AndroidFX &&
-
+rm -rf prebuilts/gcc/linux-x86/arm/arm-linux- androideabi-4.9 &&
 
 #Repo init
 repo init --depth=1 --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 16 -g default,-mips,-darwin,-notdefault &&
