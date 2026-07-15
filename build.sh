@@ -18,6 +18,7 @@ rm -rf external/ant-wireless/ant_native/Android.mk &&
 rm -rf vendor/yaap &&
 rm -rf yaap &&
 rm -rf hardware/lineage/build/soong/generator &&
+rm -rf vendor/themes &&
 
 
 #Repo init
