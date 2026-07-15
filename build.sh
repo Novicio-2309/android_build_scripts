@@ -15,6 +15,10 @@ rm -rf prebuilts/gcc/linux-x86/arm/arm-linux- androideabi-4.9 &&
 rm -rf external/ant-wireless &&
 rm -rf packages/apps/LunarisDolby &&
 rm -rf external/ant-wireless/ant_native/Android.mk &&
+rm -rf vendor/yaap &&
+rm -rf yaap &&
+rm -rf hardware/lineage/build/soong/generator &&
+
 
 #Repo init
 repo init --depth=1 --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 16 -g default,-mips,-darwin,-notdefault &&
