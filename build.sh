@@ -4,6 +4,7 @@ set -e
 crave run --no-patch -- "
 rm -rf .repo/local_manifests &&
 rm -rf vendor/infinity-priv/keys &&
+rm -rf vendor/lineage-priv/keys &&
 rm -rf hardware/xioami &&
 rm -rf device/xioami/amethyst &&
 rm -rf device/xioami/amethyst-kernel &&
