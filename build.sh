@@ -52,12 +52,13 @@ if [ -f system/sepolicy/private/compat/202404/202404.ignore.cil ]; then
     grep -q 'settingslib_prop' system/sepolicy/private/compat/202404/202404.ignore.cil || echo -e 'settingslib_prop' >> system/sepolicy/private/compat/202404/202404.ignore.cil
 fi &&
 
-#Fetch missing GMS repositories
-(avium get_gms || true) &&
-
-#Setup environment and start build
+#Setup environment
 . build/envsetup.sh &&
 
+#Fetch missing GMS repositories (executes after envsetup to avoid command not found)
+(avium get_gms || true) &&
+
+#Start build
 lunch lineage_amethyst-bp4a-userdebug &&
 m bacon
 "
