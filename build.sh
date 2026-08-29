@@ -12,7 +12,7 @@ rm -rf device/qcom/sepolicy_vndr/sm8650 &&
 rm -rf vendor/xioami/amethyst &&
 rm -rf hardware/dolby &&
 rm -rf packages/apps/ViPER4AndroidFX &&
-rm -rf prebuilts/gcc/linux-x86/arm/arm-linux- androideabi-4.9 &&
+rm -rf prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9 &&
 rm -rf external/ant-wireless &&
 rm -rf packages/apps/LunarisDolby &&
 rm -rf external/ant-wireless/ant_native/Android.mk &&
@@ -37,26 +37,11 @@ git clone https://github.com/BluedMC-Amethyst/device_qcom_sepolicy_vndr.git -b l
 #key
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
 
-# Automatic insertion for sepolicy ignore.cil files
-echo 'Adding devicesettings_app and settingslib_prop to ignore.cil files...' &&
-
-# For 34.0 ignore.cil
-if [ -f system/sepolicy/private/compat/34.0/34.0.ignore.cil ]; then
-    grep -q 'devicesettings_app' system/sepolicy/private/compat/34.0/34.0.ignore.cil || echo -e '\ndevicesettings_app' >> system/sepolicy/private/compat/34.0/34.0.ignore.cil
-    grep -q 'settingslib_prop' system/sepolicy/private/compat/34.0/34.0.ignore.cil || echo -e 'settingslib_prop' >> system/sepolicy/private/compat/34.0/34.0.ignore.cil
-fi &&
-
-# For 202404 ignore.cil
-if [ -f system/sepolicy/private/compat/202404/202404.ignore.cil ]; then
-    grep -q 'devicesettings_app' system/sepolicy/private/compat/202404/202404.ignore.cil || echo -e '\ndevicesettings_app' >> system/sepolicy/private/compat/202404/202404.ignore.cil
-    grep -q 'settingslib_prop' system/sepolicy/private/compat/202404/202404.ignore.cil || echo -e 'settingslib_prop' >> system/sepolicy/private/compat/202404/202404.ignore.cil
-fi &&
-
 #Setup environment
 . build/envsetup.sh &&
 
 #Fetch missing GMS repositories (executes after envsetup to avoid command not found)
-(avium get_gms || true) &&
+yes 'y' | avium get_gms &&
 
 #Start build
 lunch lineage_amethyst-bp4a-userdebug &&
