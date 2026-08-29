@@ -30,6 +30,11 @@ git clone https://github.com/Novicio-2309/local_manifests.git -b Avium16 .repo/l
 #Sync the full source
 /opt/crave/resync.sh &&
 
+#Pull Git LFS assets for MIUI Camera
+if [ -d vendor/xiaomi/miuicamera ]; then
+  cd vendor/xiaomi/miuicamera && git lfs pull && cd ../../..
+fi &&
+
 #reclone sepolicy
 rm -rf device/qcom/sepolicy_vndr/sm8650 &&
 git clone https://github.com/BluedMC-Amethyst/device_qcom_sepolicy_vndr.git -b lineage-23.2-caf-sm8650 device/qcom/sepolicy_vndr/sm8650 --depth=1 &&
