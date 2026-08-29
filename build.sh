@@ -37,7 +37,7 @@ fi &&
 
 #reclone sepolicy
 rm -rf device/qcom/sepolicy_vndr/sm8650 &&
-git clone https://github.com/BluedMC-Amethyst/device_qcom_sepolicy_vndr.git -b lineage-23.2-caf-sm8650 device/qcom/sepolicy_vndr/sm8650 --depth=1 &&
+git clone https://github.com/BluedMC-Amethyst/device_qcom_sepolicy_vndr.git -b sixteen-sm8650 device/qcom/sepolicy_vndr/sm8650 --depth=1 &&
 
 #key
 git clone --depth=1 https://github.com/Novicio-2309/signingkey vendor/lineage-priv/keys &&
